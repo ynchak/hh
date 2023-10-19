@@ -1,5 +1,6 @@
 import { Container, Flex, Grid, Heading } from "@radix-ui/themes";
 import TextAreaForm from "./components/TextAreaForm";
+import SaveForm from "./components/SaveForm";
 
 function App() {
   const data = {
@@ -17,11 +18,15 @@ function App() {
             Перенесення товарів
           </Heading>
           <TextAreaForm {...data} />
+          <TextAreaForm />
+          <TextAreaForm />
         </Flex>
         <Flex direction="column" gap="2">
           <Heading as="h2" align="center">
             Оновлення товарів
           </Heading>
+          <TextAreaForm />
+          <SaveForm />
           <TextAreaForm />
         </Flex>
       </Grid>
