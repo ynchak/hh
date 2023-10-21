@@ -2,13 +2,16 @@ import { Container, Flex, Grid, Heading } from "@radix-ui/themes";
 import TextAreaForm from "./components/TextAreaForm";
 import SaveForm from "./components/SaveForm";
 
+import { textareaFormsStore } from "../store";
+
 function App() {
-  const data = {
-    btnIcon: "open",
-    btnTitle: "Відкрити джерела",
-    btnColor: "indigo",
-    placeholder: "Введи стовпчики ID",
-  };
+  const {
+    openSourcesTransfer,
+    openSourcesUpdate,
+    trasformDataTransfer,
+    splitColumn,
+    createLinks,
+  } = textareaFormsStore();
 
   return (
     <Container>
@@ -17,17 +20,17 @@ function App() {
           <Heading as="h2" align="center">
             Перенесення товарів
           </Heading>
-          <TextAreaForm {...data} />
-          <TextAreaForm />
-          <TextAreaForm />
+          <TextAreaForm {...openSourcesTransfer} />
+          <TextAreaForm {...trasformDataTransfer} />
+          <TextAreaForm {...splitColumn} />
         </Flex>
         <Flex direction="column" gap="2">
           <Heading as="h2" align="center">
             Оновлення товарів
           </Heading>
-          <TextAreaForm />
+          <TextAreaForm {...openSourcesUpdate} />
           <SaveForm />
-          <TextAreaForm />
+          <TextAreaForm {...createLinks} />
         </Flex>
       </Grid>
     </Container>

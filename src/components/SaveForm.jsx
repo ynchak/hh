@@ -7,13 +7,10 @@ const variants = [
 ];
 const SaveForm = () => {
   return (
-    <Card style={{ minHeight: "155px" }}>
+    <Card style={{ minHeight: "154.9px" }}>
       <Flex direction="column" gap="2">
         <Select.Root defaultValue="">
-          <Select.Trigger
-            style={{ width: "100%" }}
-            placeholder="Обери варіант"
-          />
+          <Select.Trigger placeholder="Обери варіант" />
           <Select.Content>
             <Select.Group>
               {variants.map(({ name, value }) => (
@@ -25,11 +22,11 @@ const SaveForm = () => {
           </Select.Content>
         </Select.Root>
         <TextField.Root>
-          <TextField.Input placeholder="Search the docs…" />
+          <TextField.Input placeholder="" />
         </TextField.Root>
       </Flex>
       <Flex mt="2" justify="end">
-        <Button>
+        <Button color="green">
           <LockClosedIcon />
           Save
         </Button>
