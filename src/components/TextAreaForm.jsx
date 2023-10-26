@@ -47,10 +47,10 @@ const TextAreaForm = ({
     return (
       <RadioGroup.Root defaultValue={radio} onValueChange={handleRadio}>
         <Flex gap="4" direction="row">
-          {values.map((el) => (
-            <Text key={el} as="label" size="2">
+          {values.map(({ status, value }) => (
+            <Text key={status} as="label" size="2">
               <Flex gap="2">
-                <RadioGroup.Item value={el} /> {el}
+                <RadioGroup.Item value={status} /> {value}
               </Flex>
             </Text>
           ))}

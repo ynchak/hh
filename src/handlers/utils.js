@@ -1,6 +1,6 @@
 const openInNewTab = (links) => {
   for (const link of links) {
-    // console.log(link);
+    console.log(link);
     window.open(link, "_blank");
   }
 };

@@ -9,7 +9,8 @@ function App() {
     openSourcesTransfer,
     openSourcesUpdate,
     trasformDataTransfer,
-    splitColumn,
+    // splitColumn,
+    openSF,
     createLinks,
   } = textareaFormsStore();
 
@@ -22,7 +23,8 @@ function App() {
           </Heading>
           <TextAreaForm {...openSourcesTransfer} />
           <TextAreaForm {...trasformDataTransfer} />
-          <TextAreaForm {...splitColumn} />
+          {/* <TextAreaForm {...splitColumn} /> */}
+          <TextAreaForm {...openSF} />
         </Flex>
         <Flex direction="column" gap="2">
           <Heading as="h2" align="center">

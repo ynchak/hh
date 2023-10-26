@@ -30,10 +30,8 @@ const SaveForm = () => {
     if (option !== "categoty") {
       setParamInput("");
     }
-    console.log(paramInput);
     update({ variant: option, value: input, paramValue: paramInput });
   };
-  console.log(option);
   return (
     <Card style={{ minHeight: "154.9px" }}>
       <form autoComplete="off" onSubmit={handleSubmit}>

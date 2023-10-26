@@ -5,6 +5,7 @@ import {
   sourcesUpdateOpen,
   splitColumn as splitColumnFn,
   createLinksFromId,
+  openInSF,
 } from "./src/handlers";
 
 const localStorageKey = "hfw";
@@ -41,9 +42,23 @@ const textareaFormsStore = create(() => ({
     btnColor: "orange",
     radioGroup: {
       defaultValue: 500,
-      values: [50, 200, 500]
+      values: [50, 200, 500],
     },
     action: splitColumnFn,
+  },
+  openSF: {
+    placeholder: "Введи стовпчик з ID",
+    btnTitle: "Відкрити у конструкторі умов",
+    btnIcon: "open",
+    btnColor: "indigo",
+    radioGroup: {
+      defaultValue: "all",
+      values: [
+        { status: "all", value: "Всі" },
+        { status: "active", value: "Активні" },
+      ],
+    },
+    action: openInSF,
   },
   createLinks: {
     placeholder: "Введи стовпчик. ID",
