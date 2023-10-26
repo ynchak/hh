@@ -15,7 +15,7 @@ const textareaFormsStore = create(() => ({
     btnTitle: "Відкрити джерела",
     btnIcon: "open",
     btnColor: "indigo",
-    addRadio: false,
+    radioGroup: null,
     action: sourcesTransferOpen,
   },
   openSourcesUpdate: {
@@ -23,7 +23,7 @@ const textareaFormsStore = create(() => ({
     btnTitle: "Відкрити джерела",
     btnIcon: "open",
     btnColor: "indigo",
-    addRadio: false,
+    radioGroup: null,
     action: sourcesUpdateOpen,
   },
   trasformDataTransfer: {
@@ -31,7 +31,7 @@ const textareaFormsStore = create(() => ({
     btnTitle: "Трансформувати",
     btnIcon: "transform",
     btnColor: "orange",
-    addRadio: false,
+    radioGroup: null,
     action: transformData,
   },
   splitColumn: {
@@ -39,7 +39,10 @@ const textareaFormsStore = create(() => ({
     btnTitle: "Розбити стовпчик",
     btnIcon: "split",
     btnColor: "orange",
-    addRadio: true,
+    radioGroup: {
+      defaultValue: 500,
+      values: [50, 200, 500]
+    },
     action: splitColumnFn,
   },
   createLinks: {
@@ -47,7 +50,7 @@ const textareaFormsStore = create(() => ({
     btnTitle: "Зробити посилання",
     btnIcon: "link",
     btnColor: "orange",
-    addRadio: false,
+    radioGroup: null,
     action: createLinksFromId,
   },
 }));
