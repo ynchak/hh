@@ -3,16 +3,16 @@ import { openInNewTab } from "./utils";
 
 const param = {
   address: "https://gomer.rozetka.company/gomer/sellers/attributes/source/",
-  attributes: "?SyncSourceAttributeSearch%5Battribute_id_title%5D=",
+  attributes: "?SyncSourceAttributeSearch[attribute_id_title]=",
 };
 const category = {
   address: "https://gomer.rozetka.company/gomer/sellers/attributes/source/",
-  attributes: "?SyncSourceAttributeSearch%5Brz_category_id%5D=",
-  param: "&SyncSourceAttributeSearch%5Battribute_id_title%5D=",
+  attributes: "?SyncSourceAttributeSearch[rz_category_id]=",
+  param: "&SyncSourceAttributeSearch[attribute_id_title]=",
 };
 const vendor = {
   address: "https://gomer.rozetka.company/gomer/sellers/vendors/source/",
-  attributes: "?SyncSourceVendorSearch%5Bproducer_title%5D=",
+  attributes: "?SyncSourceVendorSearch[producer_title]=",
 };
 const data = {
   param,
