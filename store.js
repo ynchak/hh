@@ -40,11 +40,11 @@ const textareaFormsStore = create(() => ({
     btnTitle: "Розбити стовпчик",
     btnIcon: "split",
     btnColor: "orange",
-    radioGroup: {
-      defaultValue: 500,
-      values: [50, 200, 500],
-    },
-    action: splitColumnFn,
+    // radioGroup: {
+    //   defaultValue: 500,
+    //   values: [50, 200, 500],
+    // },
+    // action: splitColumnFn,
   },
   openSF: {
     placeholder: "Введи стовпчик з ID",
