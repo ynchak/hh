@@ -69,7 +69,7 @@ const TextAreaForm = ({
         />
         <Flex mt="2" justify="between">
           {radioGroup ? <RadioButtons /> : <div></div>}
-          <Button color={btnColor}>
+          <Button type="submit" color={btnColor}>
             {icon[btnIcon]}
             {btnTitle}
           </Button>

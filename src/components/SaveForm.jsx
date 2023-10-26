@@ -68,7 +68,7 @@ const SaveForm = () => {
         <Flex mt="2" justify="end">
           <Button type="submit" color="green">
             <LockClosedIcon />
-            Save
+            Зберегти
           </Button>
         </Flex>
       </form>
