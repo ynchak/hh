@@ -32,10 +32,11 @@ const TextAreaForm = ({
 }) => {
   const [radio, setRadio] = useState(radioGroup?.defaultValue);
   const [value, setValue] = useState("");
+  const [countLinks, setCountLinks] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    action(value, radio);
+    setCountLinks(action(value, radio));
     setValue("");
   };
   const handleRadio = (e) => {
@@ -68,7 +69,7 @@ const TextAreaForm = ({
           onChange={(e) => setValue(e.target.value)}
         />
         <Flex mt="2" justify="between">
-          {radioGroup ? <RadioButtons /> : <div></div>}
+          {radioGroup ? <RadioButtons /> : <div>{countLinks}</div>}
           <Button type="submit" color={btnColor}>
             {icon[btnIcon]}
             {btnTitle}

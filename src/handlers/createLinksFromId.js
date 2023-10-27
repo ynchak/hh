@@ -9,5 +9,6 @@ const createLinksFromId = (column) => {
     links.push(`${url}${line}/p${line}/`);
   }
   AddToClipboard(links.join("\n"));
+  return links.length;
 };
 export default createLinksFromId;
