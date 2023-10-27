@@ -3,7 +3,7 @@ import {
   transformData,
   sourcesTransferOpen,
   sourcesUpdateOpen,
-  splitColumn as splitColumnFn,
+  // splitColumn as splitColumnFn,
   createLinksFromId,
   openInSF,
 } from "./src/handlers";
@@ -100,4 +100,16 @@ const formForSave = create((set) => {
   };
 });
 
-export { textareaFormsStore, formForSave };
+const themeMode = create((set) => {
+  const defaultTheme = localStorage.getItem("theme") || "light";
+  return {
+    defaultTheme,
+    update: ({ newTheme }) =>
+      set((state) => {
+        localStorage.setItem("theme", newTheme);
+        return { ...state, newTheme };
+      }),
+  };
+});
+
+export { textareaFormsStore, formForSave, themeMode };

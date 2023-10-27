@@ -3,7 +3,9 @@ import TextAreaForm from "./components/TextAreaForm";
 import SaveForm from "./components/SaveForm";
 
 import { textareaFormsStore } from "../store";
+import SwitchTheme from "./components/SwitchTheme";
 
+import "./main.css";
 function App() {
   const {
     openSourcesTransfer,
@@ -35,6 +37,7 @@ function App() {
           <TextAreaForm {...createLinks} />
         </Flex>
       </Grid>
+      <SwitchTheme />
     </Container>
   );
 }
