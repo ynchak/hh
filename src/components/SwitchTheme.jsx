@@ -18,7 +18,7 @@ const SwitchTheme = () => {
     update({ newTheme });
   };
   return (
-    <div className="togle">
+    <div className="toggle">
       <Text as="label" size="2">
         <Flex gap="2">
           <Switch
