@@ -1,6 +1,6 @@
 import { openInNewTab } from "./utils";
 const url = "https://gomer.rozetka.company/gomer/items/source/";
-const attr = "?ItemSearch%5Bid%5D=";
+const attr = "?ItemSearch[id]=";
 const lengthUrlIds = 50;
 
 const createLink = (line) => {
