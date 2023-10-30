@@ -3,7 +3,7 @@ import {
   transformData,
   sourcesTransferOpen,
   sourcesUpdateOpen,
-  // splitColumn as splitColumnFn,
+  splitColumn as splitColumnFn,
   createLinksFromId,
   openInSF,
 } from "./src/handlers";
@@ -40,11 +40,15 @@ const textareaFormsStore = create(() => ({
     btnTitle: "Розбити стовпчик",
     btnIcon: "split",
     btnColor: "orange",
-    // radioGroup: {
-    //   defaultValue: 500,
-    //   values: [50, 200, 500],
-    // },
-    // action: splitColumnFn,
+    radioGroup: {
+      defaultValue: "500",
+      values: [
+        { status: "50", value: "50" },
+        { status: "150", value: "150" },
+        { status: "500", value: "500" },
+      ],
+    },
+    action: splitColumnFn,
   },
   openSF: {
     placeholder: "Введи стовпчик з ID",
