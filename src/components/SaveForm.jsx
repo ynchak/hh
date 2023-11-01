@@ -1,4 +1,4 @@
-import { LockClosedIcon } from "@radix-ui/react-icons";
+import { LockClosedIcon, ResetIcon } from "@radix-ui/react-icons";
 import {
   Button,
   Card,
@@ -20,7 +20,7 @@ const SaveForm = () => {
 
   const [option, setOtion] = useState(variant);
   const [input, setInput] = useState(value);
-  const [paramInput, setParamInput] = useState(paramValue);
+  const [paramInput, setParamInput] = useState("");
 
   const handleChange = (value) => {
     setOtion(value);
@@ -32,6 +32,7 @@ const SaveForm = () => {
     }
     update({ variant: option, value: input, paramValue: paramInput });
   };
+
   return (
     <Card style={{ minHeight: "154.9px" }}>
       <form autoComplete="off" onSubmit={handleSubmit}>
@@ -56,12 +57,26 @@ const SaveForm = () => {
               />
             </Tooltip>
             {option === "category" && (
-              <Tooltip side="bottom" content="Значення">
-                <TextField.Input
-                  placeholder={paramValue}
-                  onChange={(e) => setParamInput(e.target.value)}
-                />
-              </Tooltip>
+              <Flex>
+                <Tooltip side="bottom" content="Значення">
+                  <TextField.Input
+                    placeholder={paramValue}
+                    value={paramInput}
+                    onChange={(e) => setParamInput(e.target.value)}
+                  />
+                </Tooltip>
+                <Button
+                  variant="soft"
+                  type="button"
+                  ml="2"
+                  onClick={() => {
+                    setParamInput("");
+                  }}
+                >
+                  <ResetIcon />
+                  Очистити значення
+                </Button>
+              </Flex>
             )}
           </Flex>
         </Flex>
