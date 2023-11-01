@@ -8,7 +8,7 @@ import {
   Tooltip,
 } from "@radix-ui/themes";
 import { formForSave } from "../../store";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const variants = {
   category: "ID Категорії",
@@ -32,7 +32,12 @@ const SaveForm = () => {
     }
     update({ variant: option, value: input, paramValue: paramInput });
   };
-
+  useEffect(() => {});
+  const clearData = () => {
+    setInput("");
+    setParamInput("");
+    update({ variant: option, value: input, paramValue: paramInput });
+  };
   return (
     <Card style={{ minHeight: "154.9px" }}>
       <form autoComplete="off" onSubmit={handleSubmit}>
@@ -57,30 +62,27 @@ const SaveForm = () => {
               />
             </Tooltip>
             {option === "category" && (
-              <Flex>
-                <Tooltip side="bottom" content="Значення">
-                  <TextField.Input
-                    placeholder={paramValue}
-                    value={paramInput}
-                    onChange={(e) => setParamInput(e.target.value)}
-                  />
-                </Tooltip>
-                <Button
-                  variant="soft"
-                  type="button"
-                  ml="2"
-                  onClick={() => {
-                    setParamInput("");
-                  }}
-                >
-                  <ResetIcon />
-                  Очистити значення
-                </Button>
-              </Flex>
+              <Tooltip side="bottom" content="Значення">
+                <TextField.Input
+                  placeholder={paramValue}
+                  value={paramInput}
+                  onChange={(e) => setParamInput(e.target.value)}
+                />
+              </Tooltip>
             )}
           </Flex>
         </Flex>
-        <Flex mt="2" justify="end">
+        <Flex mt="2" justify="between">
+          <Button
+            variant="soft"
+            type="submit"
+            onClick={() => {
+              clearData();
+            }}
+          >
+            <ResetIcon />
+            Очистити значення
+          </Button>
           <Button type="submit" color="green">
             <LockClosedIcon />
             Зберегти
