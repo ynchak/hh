@@ -97,7 +97,6 @@ const formForSave = create((set) => {
     update: ({ variant, value, paramValue }) =>
       set((state) => {
         const hfw = { variant, value, paramValue };
-        localStorage.clear();
         localStorage.setItem(localStorageKey, JSON.stringify(hfw));
         return { ...state, variant, value, paramValue };
       }),
