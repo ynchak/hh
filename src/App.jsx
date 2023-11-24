@@ -1,4 +1,4 @@
-import { Container, Flex, Grid, Heading } from "@radix-ui/themes";
+import { Card, Container, Flex, Grid, Heading } from "@radix-ui/themes";
 import TextAreaForm from "./components/TextAreaForm";
 import SaveForm from "./components/SaveForm";
 
@@ -18,6 +18,14 @@ function App() {
 
   return (
     <Container>
+      <Card variant="surface">
+        <p>
+          {`Скоро ця сторінка працювати не буде. нове посилання -> `}
+          <a href="https://hfw-next.vercel.app/">
+            https://hfw-next.vercel.app/
+          </a>
+        </p>
+      </Card>
       <Grid columns="2" gap="3">
         <Flex direction="column" gap="2">
           <Heading as="h2" align="center">
